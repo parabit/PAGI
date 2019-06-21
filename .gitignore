@@ -2,6 +2,7 @@ vendor
 .buildpath
 .settings
 .project
+.idea
 build
 resources/php.ini
 composer.lock

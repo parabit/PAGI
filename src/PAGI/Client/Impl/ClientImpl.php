@@ -146,10 +146,9 @@ class ClientImpl extends AbstractClient
      */
     protected function read()
     {
-        $line = fgets($this->input);
-        if ($line === false) {
-            throw new PAGIException('Could not read from AGI');
-        }
+        do {
+            $line = fgets($this->input);
+        } while ($line === false);
         $line = substr($line, 0, -1);
         $this->logger->debug('Read: ' . $line);
         return $line;
